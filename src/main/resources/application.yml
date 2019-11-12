@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+#配置数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssmdb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#配置mybatis
+mybatis:
+  type-aliases-package: com.atnewstar.integration.entity
+  mapper-locations: classpath:mapper/*.xml
+
+#显示sql
+logging:
+  level:
+    com:
+      atnewstar:
+        integration:
+          dao:
+            debug
